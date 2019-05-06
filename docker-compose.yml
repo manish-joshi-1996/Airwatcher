@@ -1,0 +1,42 @@
+version: '3.2'
+services:
+  user-app:
+   image: user-app
+   build: accountmanager/
+   restart: always
+   network_mode: host
+   ports:
+     - 8089:8089
+   expose:
+     - 8089
+   depends_on:
+     - airwatch-mysql
+  airwatch-app:
+   image: airwatch-app
+   build: airwatcher/
+   restart: always
+   network_mode: host
+   ports:
+     - 8080:8080
+   expose:
+     - 8080
+   depends_on:
+     - airwatch-mysql
+
+  airwatch-mysql:
+   image: mysql:5.5
+   network_mode: host
+   ports:
+     - 3306:3306
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: citydb
+     MYSQL_USER: manish
+     MYSQL_PASSWORD: test123
+  angular:
+    image: angular-app
+    build: AirWatchUI/
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200

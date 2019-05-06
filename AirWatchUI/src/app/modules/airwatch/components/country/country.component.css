@@ -1,0 +1,11 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.country-thumbnail{
+width:184px;
+height: 110px;
+cursor: pointer;
+background-color: aquamarine;
+}

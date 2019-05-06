@@ -1,0 +1,11 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.state-thumbnail{
+width:184px;
+height: 151px;
+cursor: pointer;
+background-color: aqua;
+}

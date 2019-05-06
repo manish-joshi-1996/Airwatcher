@@ -1,0 +1,21 @@
+<div class="flex-container">
+  <mat-card class="city-thumbnail"
+  *ngFor="let item of cities" >
+     
+          <mat-card  *ngIf="!useWatchlistApi" class="state-thumbnail ">
+          <mat-card-title class="movieTitle">{{item.city}}</mat-card-title>
+          <mat-card-content>AQIUS: {{item.current.pollution.aqius}}</mat-card-content>
+          <mat-card-content>AQICN: {{item.current.pollution.aqicn}}</mat-card-content>
+          <button class="addButton" mat-button color="primary" (click)="addToWatchList(item)">Add to WatchList</button>
+        </mat-card>
+
+        <mat-card *ngIf="useWatchlistApi" class="state-thumbnail ">
+                <mat-card-title class="movieTitle">{{item.city}}</mat-card-title>
+                <mat-card-content>AQIUS: {{item.aqius}}</mat-card-content>
+                <mat-card-content>AQICN: {{item.aqicn}}</mat-card-content>
+                <button mat-button color="primary" (click)="deletefromWatchList(item)">Delete</button>
+              </mat-card>
+      
+  
+      </mat-card>
+      </div>

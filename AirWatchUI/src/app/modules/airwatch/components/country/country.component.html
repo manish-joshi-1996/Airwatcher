@@ -1,0 +1,13 @@
+<h3>Click see states to view States</h3>
+<div class="flex-container">
+        
+<mat-card class="movie-thumbnail" *ngFor="let item of countries">
+   
+        <mat-card class="country-thumbnail">
+        <mat-card-title class="movieTitle">{{item.country}}</mat-card-title>
+        <button class="seestate-button" mat-button color="primary" [routerLink]="[item.country]">See states</button>
+</mat-card>
+    
+
+    </mat-card>
+    </div>

@@ -1,0 +1,11 @@
+
+<mat-toolbar color="primary">
+  <span>AirWatch</span>
+ 
+  <button *ngIf="loggedInState | async" mat-button [routerLink]="['./airwatch/watchlist']">Watchlist</button>
+  
+  <button *ngIf="loggedInState | async" mat-button (click)="logout()">logout</button>
+  </mat-toolbar>
+<router-outlet></router-outlet>
+
+

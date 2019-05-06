@@ -1,0 +1,13 @@
+<h3>Click see cities to view Cities</h3>
+       <div class="flex-container">
+         <mat-card class="movie-thumbnail" *ngFor="let items of states"> 
+             <mat-card class="state-thumbnail">
+             <mat-card-header class="state-header">
+         <mat-card-title class="movieTitle">{{items.state}}</mat-card-title>
+ </mat-card-header>
+         <button  mat-button color='primary' class="addButton" mat-button color="primary" 
+  [routerLink]="[items.state]"> See Cities </button>
+      </mat-card>
+      </mat-card>
+        </div>
+      
